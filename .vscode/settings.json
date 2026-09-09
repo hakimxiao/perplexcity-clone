@@ -1,0 +1,60 @@
+{
+  // ─── Python Interpreter ───────────────────────────────────────────────────
+  // Arahkan ke venv yang ada di folder server
+  "python.defaultInterpreterPath": "${workspaceFolder}/server/venv/Scripts/python.exe",
+
+  // ─── Pylance / IntelliSense ───────────────────────────────────────────────
+  "python.languageServer": "Pylance",
+  "pylance.autoImportCompletions": true,
+
+  // Tambah path agar import dari dalam folder server dikenali
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/server"
+  ],
+
+  // Root folder analisis Pylance
+  "python.analysis.include": [
+    "server"
+  ],
+
+  // Exclude folder yang tidak relevan (Flutter, build artifacts, dll)
+  "python.analysis.exclude": [
+    ".dart_tool",
+    "build",
+    "android",
+    "ios",
+    "linux",
+    "macos",
+    "windows",
+    "web",
+    "lib",
+    ".venv"
+  ],
+
+  // Mode type checking (ubah ke "basic" atau "standard" kalau mau lebih ketat)
+  "python.analysis.typeCheckingMode": "off",
+
+  // ─── Linting & Formatting ─────────────────────────────────────────────────
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+
+  // ─── Pilih venv yang benar saat membuka terminal ──────────────────────────
+  "python.terminal.activateEnvironment": true,
+
+  // ─── Search: abaikan folder tidak perlu ───────────────────────────────────
+  "search.exclude": {
+    "**/server/venv/**": true,
+    "**/.venv/**": true,
+    "**/build/**": true,
+    "**/.dart_tool/**": true
+  },
+
+  // ─── File watcher: abaikan folder besar ───────────────────────────────────
+  "files.watcherExclude": {
+    "**/server/venv/**": true,
+    "**/.venv/**": true,
+    "**/build/**": true
+  }
+}

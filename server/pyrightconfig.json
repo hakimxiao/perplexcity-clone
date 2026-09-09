@@ -1,0 +1,15 @@
+{
+  "venvPath": ".",
+  "venv": "venv",
+  "pythonVersion": "3.14",
+  "include": [
+    "."
+  ],
+  "exclude": [
+    "venv"
+  ],
+  "typeCheckingMode": "off",
+  "useLibraryCodeForTypes": true,
+  "autoSearchPaths": true,
+  "extraPaths": []
+}
