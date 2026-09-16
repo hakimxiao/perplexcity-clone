@@ -30,18 +30,6 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 Expanded(child: SearchSection()),
-                StreamBuilder(
-                  stream: ChatWebService().contentStream,
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(child: CircularProgressIndicator());
-                    }
-
-                    fullResponse += snapshot.data?['data'] ?? "";
-
-                    return Text(fullResponse);
-                  },
-                ),
                 // Footer
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 16),
