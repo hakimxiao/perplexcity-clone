@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/widgets/answer_section.dart';
-import 'package:perplexity_clone/widgets/search_Section.dart';
 import 'package:perplexity_clone/widgets/sidebar.dart';
+import 'package:perplexity_clone/widgets/sources_section.dart';
 
 class ChatPage extends StatelessWidget {
   final String question;
@@ -30,7 +30,7 @@ class ChatPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 24),
-                    SearchSection(),
+                    SourcesSection(),
                     SizedBox(height: 24),
                     AnswerSection(),
                   ],
