@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/theme/colors.dart';
@@ -23,80 +24,85 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Row(
         children: [
-          Sidebar(),
+          kIsWeb ? Sidebar() : SizedBox(),
           Expanded(
-            child: Column(
-              children: [
-                Expanded(child: SearchSection()),
-                // Footer
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: Wrap(
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
-                        child: Text(
-                          'Pro',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.footerGrey,
+            child: Padding(
+              padding: !kIsWeb
+                  ? EdgeInsets.all(8.0)
+                  : EdgeInsetsGeometry.all(0),
+              child: Column(
+                children: [
+                  Expanded(child: SearchSection()),
+                  // Footer
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    child: Wrap(
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+                          child: Text(
+                            'Pro',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.footerGrey,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
-                        child: Text(
-                          'Enterprise',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.footerGrey,
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+                          child: Text(
+                            'Enterprise',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.footerGrey,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
-                        child: Text(
-                          'Store',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.footerGrey,
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+                          child: Text(
+                            'Store',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.footerGrey,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
-                        child: Text(
-                          'Blog',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.footerGrey,
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+                          child: Text(
+                            'Blog',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.footerGrey,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
-                        child: Text(
-                          'Careers',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.footerGrey,
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+                          child: Text(
+                            'Careers',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.footerGrey,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
-                        child: Text(
-                          'English (English)',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.footerGrey,
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+                          child: Text(
+                            'English (English)',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.footerGrey,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
